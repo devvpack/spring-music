@@ -5,7 +5,5 @@ applications:
   instances: 1
   host: spring-music
   path: build/libs/spring-music.war
-  env:
-    SPRING_PROFILES_ACTIVE: mysql-cloud
   services:
     - cloudpack-db1
