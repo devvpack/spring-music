@@ -91,6 +91,10 @@ using the form `<dbtype>://<username>:<password>@<hostname>:<port>/<databasename
 These steps use examples for username, password, host name, and database name that should be replaced with real values.
 
 ~~~
+# create a user-provided cloudpack DB Service 
+$ cf create-user-provided-service mysql-db -p 'uri'
+uri> mysql://id:password@ip:port/database-name
+
 # create a user-provided Oracle database service instance
 $ cf create-user-provided-service oracle-db -p '{"uri":"oracle://root:secret@dbserver.example.com:1521/mydatabase"}'
 # create a user-provided MySQL database service instance
