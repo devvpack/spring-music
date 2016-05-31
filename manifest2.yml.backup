@@ -1,0 +1,8 @@
+---
+applications:
+- name: spring-music
+  memory: 1024M
+  instances: 1
+  host: spring-music-thankful-burley
+  path: build/libs/spring-music.war
+  domain: devpack.co.kr
