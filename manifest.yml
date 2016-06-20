@@ -5,5 +5,10 @@ applications:
   instances: 1
   host: spring-music
   path: build/libs/spring-music.war
+  buildpack: https://github.com/cloudfoundry-community/jboss-buildpack.git
   services:
-    - cloudpack-db1
+    - mssql-db
+    
+env:
+  JBP_CONFIG_OPEN_JDK_JRE: '{jre: {version: 1.7.0_+}}'
+  JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enable: false}' 
