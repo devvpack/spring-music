@@ -10,4 +10,4 @@ applications:
 env:
   JBP_CONFIG_OPEN_JDK_JRE: '{jre: {version: 1.7.0_+}}'
   JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
-  JBP_CONFIG_JAVA_MAIN: '{arguments: "-server.port=80 -foo=bar"}'
+  JBP_CONFIG_JAVA_MAIN: '{arguments: "-server.port=443 -foo=bar"}'

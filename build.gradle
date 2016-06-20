@@ -3,7 +3,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse-wtp'
 apply plugin: 'idea'
 
-apply plugin: 'tomcat'
+// apply plugin: 'tomcat'
 apply plugin: 'war'
 
 apply plugin: 'cloudfoundry'
@@ -22,8 +22,8 @@ sourceSets {
     }
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 archivesBaseName = "spring-music"
 
 jar {
@@ -40,7 +40,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'org.gradle.api.plugins:gradle-tomcat-plugin:1.2.5'
+//        classpath 'org.gradle.api.plugins:gradle-tomcat-plugin:1.2.5'
         classpath 'org.cloudfoundry:cf-gradle-plugin:1.0.3'
     }
 }
@@ -107,11 +107,11 @@ dependencies {
     testCompile "org.springframework:spring-test:${springVersion}"
 
     // Tomcat
-    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}"
-    tomcat "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}"
-    tomcat("org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}") {
-        exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
-    }
+    // tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}"
+    // tomcat "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}"
+    // tomcat("org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}") {
+    //     exclude group: 'org.eclipse.jdt.core.compiler', module: 'ecj'
+    //}
 }
 
 task wrapper(type: Wrapper) {
@@ -123,9 +123,9 @@ war {
     version = ""
 }
 
-tomcatRun {
-    outputFile = file('tomcat.log')
-}
+//tomcatRun {
+//    outputFile = file('tomcat.log')
+//}
 
 cloudfoundry {
     target = "https://api.devpack.co.kr"
